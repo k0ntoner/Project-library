@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>picture/A Game of Thrones.jpg</file>
+        <file>picture/Crime and Punishment.jpg</file>
+        <file>picture/Harry Potter and the Philosopher's Stone.jpg</file>
+        <file>picture/Pride and Prejudice.jpg</file>
+        <file>picture/The Chronicles of Narnia.jpg</file>
+        <file>picture/The Hitchhiker's Guide to the Galaxy.jpg</file>
+        <file>picture/The Master and Margarita.jpg</file>
+        <file>picture/War and Peace.jpg</file>
+    </qresource>
+</RCC>

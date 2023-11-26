@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Catalog</class>
+ <widget class="QDialog" name="Catalog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>561</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #ffffff; /* Цвет фона окна */
+    border: 1px solid #cccccc; /* Контур окна */
+    border-radius: 10px; /* Скругленные углы окна */
+}
+QDialog#loginDialog QLabel#titleLabel {
+    font-size: 24px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-bottom: 20px; /* Отступ снизу заголовка */
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="Time">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Data">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+       </property>
+       <property name="text">
+        <string>Library</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="line_for_find">
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг текста */
+    font-size: 14px; /* Размер шрифта */
+}
+
+QLineEdit:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="Find">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+       </property>
+       <property name="text">
+        <string>Search</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QScrollArea" name="scrollArea_2">
+       <property name="styleSheet">
+        <string notr="true">QScrollArea {
+    border: 1px solid #cccccc; /* Контур вокруг QScrollArea */
+}
+
+QScrollBar:vertical {
+    border: 1px solid #cccccc; /* Контур вертикального скроллбара */
+    width: 12px; /* Ширина вертикального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+
+    min-height: 20px; /* Минимальная высота &quot;рукоятки&quot; вертикального скроллбара */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none; /* Убираем контур для стрелок вертикального скроллбара */
+    background: none; /* Убираем фон для стрелок вертикального скроллбара */
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #cccccc; /* Контур горизонтального скроллбара */
+    height: 12px; /* Высота горизонтального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #4CAF50; /* Цвет &quot;рукоятки&quot; горизонтального скроллбара */
+    min-width: 20px; /* Минимальная ширина &quot;рукоятки&quot; горизонтального скроллбара */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none; /* Убираем контур для стрелок горизонтального скроллбара */
+    background: none; /* Убираем фон для стрелок горизонтального скроллбара */
+}</string>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>527</width>
+          <height>2638</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="14" column="0">
+          <widget class="QLabel" name="Thrones">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+           </property>
+           <property name="text">
+            <string>A Game of Thrones</string>
+           </property>
+          </widget>
+         </item>
+         <item row="20" column="1">
+          <widget class="QPushButton" name="Open_Narnia">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="21" column="1">
+          <widget class="QPushButton" name="Narnia_Like">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FF0000; /* Красный цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #CC0000; /* Темнокрасный цвет при наведении */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #990000; /* Темнокрасный цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #660000; /* Контур темнокрасного цвета */
+}</string>
+           </property>
+           <property name="text">
+            <string>Like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="Crime_img">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>picture/Crime and Punishment.jpg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="21" column="0">
+          <widget class="QLabel" name="Narnia_img">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>picture/The Chronicles of Narnia.jpg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="15" column="0">
+          <widget class="QLabel" name="Thrones_img">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>picture/A Game of Thrones.jpg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="20" column="0">
+          <widget class="QLabel" name="Narnia">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+           </property>
+           <property name="text">
+            <string>The Chronicles of Narnia</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="10" column="0">
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="Margarita_img">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>picture/The Master and Margarita.jpg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QPushButton" name="Open_Margarita">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="Open_Harry">
+           <property name="statusTip">
+            <string extracomment="Segoe UI,9,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"/>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="0">
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="Harry_like">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FF0000; /* Красный цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #CC0000; /* Темнокрасный цвет при наведении */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #990000; /* Темнокрасный цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #660000; /* Контур темнокрасного цвета */
+}</string>
+           </property>
+           <property name="text">
+            <string>Like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="Harry">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+           </property>
+           <property name="text">
+            <string>Harry Potter and the Philosopher's Stone</string>
+           </property>
+          </widget>
+         </item>
+         <item row="19" column="0">
+          <spacer name="verticalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="12" column="1">
+          <widget class="QPushButton" name="War_like">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FF0000; /* Красный цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #CC0000; /* Темнокрасный цвет при наведении */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #990000; /* Темнокрасный цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #660000; /* Контур темнокрасного цвета */
+}</string>
+           </property>
+           <property name="text">
+            <string>Like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="Crime">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+           </property>
+           <property name="text">
+            <string>Crime and Punishment</string>
+           </property>
+          </widget>
+         </item>
+         <item row="17" column="0">
+          <widget class="QLabel" name="Galaxy">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+           </property>
+           <property name="text">
+            <string>The Hitchhiker's Guide to the Galaxy</string>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="0">
+          <widget class="QLabel" name="Galaxy_img">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>picture/The Hitchhiker's Guide to the Galaxy.jpg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="0">
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLabel" name="War_and_peace">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+           </property>
+           <property name="text">
+            <string>War and Peace</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="QPushButton" name="Margarita_Like">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FF0000; /* Красный цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #CC0000; /* Темнокрасный цвет при наведении */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #990000; /* Темнокрасный цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #660000; /* Контур темнокрасного цвета */
+}</string>
+           </property>
+           <property name="text">
+            <string>Like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="17" column="1">
+          <widget class="QPushButton" name="Open_Galaxy">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QPushButton" name="Open_War">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QPushButton" name="Open_Crime">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QPushButton" name="Crime_Like">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FF0000; /* Красный цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #CC0000; /* Темнокрасный цвет при наведении */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #990000; /* Темнокрасный цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #660000; /* Контур темнокрасного цвета */
+}</string>
+           </property>
+           <property name="text">
+            <string>Like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="0">
+          <widget class="QLabel" name="War_and_peace_img">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>picture/War and Peace.jpg</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="1">
+          <widget class="QPushButton" name="Galaxy_LIke">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FF0000; /* Красный цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #CC0000; /* Темнокрасный цвет при наведении */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #990000; /* Темнокрасный цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #660000; /* Контур темнокрасного цвета */
+}</string>
+           </property>
+           <property name="text">
+            <string>Like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="14" column="1">
+          <widget class="QPushButton" name="Open_Thrones">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="Margarita">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel */
+QLabel {
+    font-size: 15px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+
+/* Стили для изображений (QLabel с изображением) */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для названия изображения */
+QLabel#titleLabel {
+    font-size: 10px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для окна (например, QMainWindow) */
+QMainWindow {
+    background-color: #ffffff; /* Цвет фона окна */
+}</string>
+           </property>
+           <property name="text">
+            <string>The Master and Margarita</string>
+           </property>
+          </widget>
+         </item>
+         <item row="15" column="1">
+          <widget class="QPushButton" name="Thrones_Like">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #FF0000; /* Красный цвет */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #CC0000; /* Темнокрасный цвет при наведении */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #990000; /* Темнокрасный цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #660000; /* Контур темнокрасного цвета */
+}</string>
+           </property>
+           <property name="text">
+            <string>Like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="Harry_img">
+           <property name="styleSheet">
+            <string notr="true">/* Стили для QLabel с изображением */
+QLabel#imageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#imageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для заголовка изображения */
+QLabel#titleLabel {
+    font-size: 20px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-top: 10px; /* Верхний отступ */
+}
+
+/* Пример: стили для круглого изображения */
+QLabel#roundImageLabel {
+    background-color: #f0f0f0; /* Цвет фона */
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 50%; /* Круглые углы для круглого изображения */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#roundImageLabel:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}
+
+/* Пример: стили для рамки вокруг изображения */
+QLabel#borderedImageLabel {
+    border: 2px solid #4CAF50; /* Цвет рамки */
+    padding: 5px; /* Отступы вокруг изображения */
+}
+
+QLabel#borderedImageLabel:hover {
+    border: 2px solid #45a049; /* Изменяем цвет рамки при наведении */
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>picture/Harry Potter and the Philosopher's Stone.jpg</pixmap>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

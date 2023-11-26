@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Crime_and_Punishment</class>
+ <widget class="QDialog" name="Crime_and_Punishment">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>520</width>
+    <height>343</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="3">
+    <widget class="QTextEdit" name="textEdit">
+     <property name="styleSheet">
+      <string notr="true">QScrollArea {
+    border: 1px solid #cccccc; /* Контур вокруг QScrollArea */
+}
+
+QScrollBar:vertical {
+    border: 1px solid #cccccc; /* Контур вертикального скроллбара */
+    width: 12px; /* Ширина вертикального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+
+    min-height: 20px; /* Минимальная высота &quot;рукоятки&quot; вертикального скроллбара */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none; /* Убираем контур для стрелок вертикального скроллбара */
+    background: none; /* Убираем фон для стрелок вертикального скроллбара */
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #cccccc; /* Контур горизонтального скроллбара */
+    height: 12px; /* Высота горизонтального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #4CAF50; /* Цвет &quot;рукоятки&quot; горизонтального скроллбара */
+    min-width: 20px; /* Минимальная ширина &quot;рукоятки&quot; горизонтального скроллбара */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none; /* Убираем контур для стрелок горизонтального скроллбара */
+    background: none; /* Убираем фон для стрелок горизонтального скроллбара */
+}</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;Crime and Punishment&amp;quot; is a novel written by the Russian author Fyodor Dostoevsky and was first published in 1866. The story is set in St. Petersburg, Russia, and follows the life of Rodion Raskolnikov, a former student who becomes entangled in a moral and psychological struggle.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The novel explores the themes of morality, guilt, and redemption. Raskolnikov, a brilliant but impoverished young man, believes in the idea of the &amp;quot;extraordinary man&amp;quot; who is above the law and morality. In pursuit of this idea, he commits a brutal murder of an old pawnbroker and her sister. As the story unfolds, Raskolnikov grapples with the consequences of his crime and the moral dilemmas it presents.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Throughout the novel, the reader is taken on a psychological journey as Raskolnikov's mental state deteriorates, and he is pursued by the relentless and clever detective Porfiry Petrovich. Raskolnikov's inner turmoil, his relationships with other characters, and the exploration of the human psyche make &amp;quot;Crime and Punishment&amp;quot; a classic work of literature that delves into the complex depths of human nature. The novel ultimately examines the concept of punishment, both legal and self-imposed, and whether redemption and moral transformation are possible for a person who has committed such a heinous act.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="3">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    font-size: 18px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Crime and Punishment</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resors.qrc">:/img/picture/Crime and Punishment.jpg</pixmap>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Download</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resors.qrc"/>
+ </resources>
+ <connections/>
+</ui>

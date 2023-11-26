@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>198</width>
+    <height>213</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #ffffff; /* Цвет фона окна */
+    border: 1px solid #cccccc; /* Контур окна */
+    border-radius: 10px; /* Скругленные углы окна */
+}
+QDialog#loginDialog QLabel#titleLabel {
+    font-size: 24px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-bottom: 20px; /* Отступ снизу заголовка */
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+      </property>
+      <property name="text">
+       <string>Sign up</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="LOg_int_Button">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+      </property>
+      <property name="text">
+       <string>Log in</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>198</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

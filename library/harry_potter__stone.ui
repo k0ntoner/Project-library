@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Harry_Potter__Stone</class>
+ <widget class="QDialog" name="Harry_Potter__Stone">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>407</width>
+    <height>345</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    font-size: 18px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Harry Potter and the Philosopher's Stone</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="harry_img">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>picture/Harry Potter and the Philosopher's Stone.jpg</pixmap>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="styleSheet">
+      <string notr="true">QScrollArea {
+    border: 1px solid #cccccc; /* Контур вокруг QScrollArea */
+}
+
+QScrollBar:vertical {
+    border: 1px solid #cccccc; /* Контур вертикального скроллбара */
+    width: 12px; /* Ширина вертикального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+
+    min-height: 20px; /* Минимальная высота &quot;рукоятки&quot; вертикального скроллбара */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none; /* Убираем контур для стрелок вертикального скроллбара */
+    background: none; /* Убираем фон для стрелок вертикального скроллбара */
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #cccccc; /* Контур горизонтального скроллбара */
+    height: 12px; /* Высота горизонтального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #4CAF50; /* Цвет &quot;рукоятки&quot; горизонтального скроллбара */
+    min-width: 20px; /* Минимальная ширина &quot;рукоятки&quot; горизонтального скроллбара */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none; /* Убираем контур для стрелок горизонтального скроллбара */
+    background: none; /* Убираем фон для стрелок горизонтального скроллбара */
+}</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;Harry Potter and the Philosopher's Stone&amp;quot; is the first book in the popular Harry Potter series written by J.K. Rowling. The story follows the adventures of a young boy named Harry Potter, who discovers that he is a wizard on his eleventh birthday. He receives an invitation to attend Hogwarts School of Witchcraft and Wizardry and embarks on a magical journey.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;At Hogwarts, Harry makes friends and learns about the wizarding world, but he also uncovers the dark secrets of his past. The main plot revolves around the search for the Philosopher's Stone, a powerful magical object that can grant immortality. Harry, along with his friends Ron and Hermione, must protect the stone from falling into the wrong hands, particularly those of the dark wizard Lord Voldemort, who is rumored to have been vanquished when he tried to kill Harry as a baby.&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The book is a delightful blend of magic, friendship, and adventure, and it introduces readers to the enchanting world of wizards and witches. It's a tale of courage, friendship, and the triumph of good over evil, which sets the stage for the rest of the series. In the United States, the book is titled &amp;quot;Harry Potter and the Sorcerer's Stone.&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Download</string>
+     </property>
+     <property name="autoRepeat">
+      <bool>false</bool>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

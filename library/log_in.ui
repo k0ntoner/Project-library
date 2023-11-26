@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Log_in</class>
+ <widget class="QDialog" name="Log_in">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>294</width>
+    <height>250</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #ffffff; /* Цвет фона окна */
+    border: 1px solid #cccccc; /* Контур окна */
+    border-radius: 10px; /* Скругленные углы окна */
+}
+QDialog#loginDialog QLabel#titleLabel {
+    font-size: 24px; /* Размер шрифта для заголовка */
+    color: #4CAF50; /* Зеленый цвет для заголовка */
+    margin-bottom: 20px; /* Отступ снизу заголовка */
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>237</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>237</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size: 16px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+    margin-bottom: 5px; /* Отступ снизу */</string>
+       </property>
+       <property name="text">
+        <string>Log in</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">font-size: 16px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+    margin-bottom: 5px; /* Отступ снизу */</string>
+         </property>
+         <property name="text">
+          <string>Email</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="Email_lineEdit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг текста */
+    font-size: 14px; /* Размер шрифта */
+}
+
+QLineEdit:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">font-size: 16px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+    margin-bottom: 5px; /* Отступ снизу */</string>
+         </property>
+         <property name="text">
+          <string>Password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="Password_lineEdit">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг текста */
+    font-size: 14px; /* Размер шрифта */
+}
+
+QLineEdit:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+       </property>
+       <property name="text">
+        <string>Accept</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="Error">
+     <property name="styleSheet">
+      <string notr="true">font-size: 16px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+    margin-bottom: 5px; /* Отступ снизу */</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

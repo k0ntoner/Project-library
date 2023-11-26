@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>A_Game_of_Thrones</class>
+ <widget class="QDialog" name="A_Game_of_Thrones">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>448</width>
+    <height>352</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="resors.qrc">:/img/picture/A Game of Thrones.jpg</pixmap>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QTextEdit" name="textEdit">
+     <property name="styleSheet">
+      <string notr="true">QScrollArea {
+    border: 1px solid #cccccc; /* Контур вокруг QScrollArea */
+}
+
+QScrollBar:vertical {
+    border: 1px solid #cccccc; /* Контур вертикального скроллбара */
+    width: 12px; /* Ширина вертикального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+
+    min-height: 20px; /* Минимальная высота &quot;рукоятки&quot; вертикального скроллбара */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none; /* Убираем контур для стрелок вертикального скроллбара */
+    background: none; /* Убираем фон для стрелок вертикального скроллбара */
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #cccccc; /* Контур горизонтального скроллбара */
+    height: 12px; /* Высота горизонтального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #4CAF50; /* Цвет &quot;рукоятки&quot; горизонтального скроллбара */
+    min-width: 20px; /* Минимальная ширина &quot;рукоятки&quot; горизонтального скроллбара */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none; /* Убираем контур для стрелок горизонтального скроллбара */
+    background: none; /* Убираем фон для стрелок горизонтального скроллбара */
+}</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;quot;A Game of Thrones&amp;quot; is the first book in George R.R. Martin's epic fantasy series, &amp;quot;A Song of Ice and Fire.&amp;quot; The story is set in the fictional continents of Westeros and Essos and follows multiple noble families as they vie for control of the Iron Throne and the Seven Kingdoms. The novel is known for its complex characters, intricate political plots, and the unpredictable nature of its narrative. It introduces readers to a sprawling cast of characters, including the Stark, Lannister, and Targaryen families, and weaves a tale of power, betrayal, and supernatural elements. As the characters navigate the political landscape and face external threats, the story explores themes of honor, loyalty, and the consequences of wielding power. &amp;quot;A Game of Thrones&amp;quot; has gained widespread acclaim for its rich world-building and is the foundation for the popular television series &amp;quot;Game of Thrones.&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+     </property>
+     <property name="text">
+      <string>Download</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    font-size: 18px; /* Размер шрифта */
+    color: #333333; /* Цвет текста */
+}</string>
+     </property>
+     <property name="text">
+      <string>A Game of Thrones</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resors.qrc"/>
+ </resources>
+ <connections/>
+</ui>
