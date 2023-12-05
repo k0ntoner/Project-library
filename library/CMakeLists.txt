@@ -36,6 +36,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         a_game_of_thrones.h a_game_of_thrones.cpp a_game_of_thrones.ui
         narnia.h narnia.cpp narnia.ui
         margarita.h margarita.cpp margarita.ui
+        Accaunts_saves.txt
+        list_books.h list_books.cpp list_books.ui
+        Books.txt
+        open.h open.cpp open.ui
 
 
 

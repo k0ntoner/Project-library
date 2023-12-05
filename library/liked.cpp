@@ -9,65 +9,47 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include<QPushButton>
+#include<QFile>
+#include <QMessageBox>
+#include "open.h"
 Liked::Liked(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Liked)
 {
 
     ui->setupUi(this);
+    setWindowTitle("Favorite Books");
+
 }
 
 Liked::~Liked()
 {
+
     delete ui;
 
 }
-void Liked::setLabelText(const QString &text, const QString &book_name,int size_bookname[],int size_bookimg[])
+int Liked::setLabelText(const QString &text, const QString &book_name,int size_bookname[],int size_bookimg[])
 {
+    if(number_of_favorite>0){
+        for(int i=0; i<number_of_favorite;i++){
+            qDebug()<<BookNames[i]->text();
+            if(text==BookNames[i]->text()){
+
+                return 0;
+            }
+        }
+    }
+    qDebug()<<number_of_favorite;
     number_of_favorite++;
+
     BookName = new QLabel( this);
-    qDebug() <<size_bookname[0];
-    qDebug() <<size_bookname[1];
-    qDebug() <<size_bookimg[0];
-    qDebug() <<size_bookimg[1];
     BookName->setGeometry(9, 9, size_bookname[0], size_bookname[1]);
     Bookimg = new QLabel( this);
     Bookimg->setGeometry(9, 39, size_bookimg[0], size_bookimg[1]);
-    if(book_name=="Harry"){
-        BookName->setText("Harry Potter and the Philosopher's Stone");
-        QPixmap Harry(":/img/picture/Harry Potter and the Philosopher's Stone.jpg");
-        Bookimg->setPixmap(Harry);
-    }
-    if(book_name=="Crime"){
-        BookName->setText("Crime and Punishment");
-        QPixmap Crime(":/img/picture/Crime and Punishment.jpg");
-        Bookimg->setPixmap(Crime);
-    }
-    if(book_name=="War"){
-        BookName->setText("War and Peace");
-        QPixmap War_and_Peace(":/img/picture/War and Peace.jpg");
-        Bookimg->setPixmap(War_and_Peace);
-    }
-    if(book_name=="Thrones"){
-        BookName->setText("Game_of_throne");
-        QPixmap Game_of_throne(":/img/picture/A Game of Thrones.jpg");
-        Bookimg->setPixmap(Game_of_throne);
-    }
-    if(book_name=="Narnia"){
-        BookName->setText("The Chronicles of Narnia");
-        QPixmap Narnia(":/img/picture/The Chronicles of Narnia.jpg");
-        Bookimg->setPixmap(Narnia);
-    }
-    if(book_name=="Margarita"){
-        BookName->setText("The Master and Margarita");
-        QPixmap Margarita(":/img/picture/The Master and Margarita.jpg");
-        Bookimg->setPixmap(Margarita);
-    }
-    if(book_name=="Galaxy"){
-        BookName->setText("The Hitchhiker's Guide to the Galaxy");
-        QPixmap Galaxy(":/img/picture/The Hitchhiker's Guide to the Galaxy.jpg");
-        Bookimg->setPixmap(Galaxy);
-    }
+    BookName->setText(text);
+    QPixmap Harry(":/img/picture/"+text+".jpg");
+    Bookimg->setPixmap(Harry);
+
     QPushButton* Open_button = new QPushButton("Open", this);
     QPushButton* Delete_button = new QPushButton("Delete", this);
     connect(Delete_button, &QPushButton::clicked, this, &Liked::onDeleteButtonClicked);
@@ -122,14 +104,43 @@ void Liked::setLabelText(const QString &text, const QString &book_name,int size_
     }
     ui->scrollArea->setWidget(contentWidget);
     ui->scrollArea->viewport()->update();
+    return 1;
 
 }
-void Liked::onDeleteButtonClicked() {
+void Liked::onDeleteButtonClicked()
+{
     QPushButton* senderButton = qobject_cast<QPushButton*>(sender());
 
     int index = Delete_buttons.indexOf(senderButton);
 
     if (index >= 0 && index < BookNames.size()) {
+        QFile file("C:/Users/Andrew/Documents/library/Accaunts_saves.txt");
+        if (file.open(QIODevice::ReadWrite| QIODevice::Text)) {
+
+
+            // Считываем файл построчно
+            QTextStream in(&file);
+            QString Email=in.readLine();
+            QString Password=in.readLine();
+            QString line = in.readLine();
+
+            // Ищем строку, начинающуюся с "Saves:"
+            if (line.startsWith("Saves:")) {
+                    int bookIndex = line.indexOf(BookNames[index]->text());
+                    int commaIndex = line.indexOf(',', bookIndex);
+                    int endBookIndex = (commaIndex != -1) ? commaIndex : line.indexOf("\n");
+                    line.remove(bookIndex, endBookIndex - bookIndex+2);
+
+            }
+            file.seek(0);
+
+            // Очищаем содержимое файла
+            file.resize(0);
+            QTextStream out(&file);
+            out<<Email<<"\n";
+            out<<Password<<"\n";
+            out<<line<<"\n";
+        }
         delete BookNames[index];
         delete BookImgs[index];
         delete Open_buttons[index];
@@ -139,9 +150,10 @@ void Liked::onDeleteButtonClicked() {
         BookImgs.remove(index);
         Open_buttons.remove(index);
         Delete_buttons.remove(index);
-
+        number_of_favorite--;
 
         updateUI();
+
     }
 }
 void Liked::Open_Book(){
@@ -150,34 +162,48 @@ void Liked::Open_Book(){
     if(BookNames[index_of_book]->text()=="Harry Potter and the Philosopher's Stone"){
         Harry_book= new Harry_Potter__Stone(this);
         Harry_book->show();
+        return;
     }
     if(BookNames[index_of_book]->text()=="Crime and Punishment"){
         crime_book= new Crime_and_Punishment(this);
         crime_book->show();
+        return;
     }
     if(BookNames[index_of_book]->text()=="A Game of Thrones"){
         Thrones=new A_Game_of_Thrones(this);
         Thrones->show();
+        return;
     }
     if(BookNames[index_of_book]->text()=="The Master and Margarita"){
         margarita= new Margarita(this);
         margarita->show();
+        return;
     }
     if(BookNames[index_of_book]->text()=="Crime and Punishment"){
         war=new War_and_Peace(this);
         war->show();
+        return;
     }
     if(BookNames[index_of_book]->text()=="The Hitchhiker's Guide to the Galaxy"){
         galaxy=new Galaxy(this);
         galaxy->show();
+        return;
     }
     if(BookNames[index_of_book]->text()=="The Chronicles of Narnia"){
         narnia=new Narnia(this);
         narnia->show();
+        return;
     }
     if(BookNames[index_of_book]->text()=="War and Peace"){
         war=new War_and_Peace(this);
         war->show();
+        return;
+    }
+    else{
+        open=new Open(this);
+        open->Fill_area(BookNames[index_of_book]->text());
+        open->show();
+        return;
     }
 
 }

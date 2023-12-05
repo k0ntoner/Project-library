@@ -14,12 +14,13 @@
 #include <QTimer>
 #include <QDateTime>
 #include <QTime>
+#include <QFile>
 #include <QScrollBar>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QScrollArea>
 #include <QCoreApplication>
-
+#include "list_books.h"
 namespace Ui {
 class Catalog;
 }
@@ -34,19 +35,6 @@ public:
 
 private slots:
 
-    void on_Harry_like_clicked();
-
-    void on_Crime_Like_clicked();
-
-    void on_Margarita_Like_clicked();
-
-    void on_War_like_clicked();
-
-    void on_Thrones_Like_clicked();
-
-    void on_Galaxy_LIke_clicked();
-
-    void on_Narnia_Like_clicked();
 
     void on_Open_Harry_clicked();
 
@@ -63,7 +51,11 @@ private slots:
     void on_Open_Narnia_clicked();
     void timerTick();
     void onSearchTextChanged(const QString &text);
-
+    void clearFile(const QString &filePath);
+    void onLikeButtonClicked(const QString &bookName);
+    void replaceLinesInFile(const QString &searchText, const QString &replaceText);
+    void addSavesLiked();
+    void on_FullList_clicked();
 
 private:
     Ui::Catalog *ui;
@@ -76,12 +68,17 @@ private:
     Margarita *margarita;
     Liked *liked;
     QVector<QLabel*> Names_of_books;
-
+    QVector<QLabel*> Search_of_books;
+    QVector<QLabel*> Img_of_books;
+    QVector<QPushButton*> Like_buttons;
     bool liked_open=0;
     QTimer *current_time;
     QTime currentTime;
     QDate currentDate;
-
+    QString fileContent;
+    QString fileContent_saves;
+    List_books *listbook;
+    QMap<QString, QList<Book>> genreBooks;
 };
 
 #endif // CATALOG_H

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>List_books</class>
+ <widget class="QDialog" name="List_books">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>467</width>
+    <height>774</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true">QScrollArea {
+    border: 1px solid #cccccc; /* Контур вокруг QScrollArea */
+}
+
+QScrollBar:vertical {
+    border: 1px solid #cccccc; /* Контур вертикального скроллбара */
+    width: 12px; /* Ширина вертикального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+
+    min-height: 20px; /* Минимальная высота &quot;рукоятки&quot; вертикального скроллбара */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none; /* Убираем контур для стрелок вертикального скроллбара */
+    background: none; /* Убираем фон для стрелок вертикального скроллбара */
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #cccccc; /* Контур горизонтального скроллбара */
+    height: 12px; /* Высота горизонтального скроллбара */
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #4CAF50; /* Цвет &quot;рукоятки&quot; горизонтального скроллбара */
+    min-width: 20px; /* Минимальная ширина &quot;рукоятки&quot; горизонтального скроллбара */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none; /* Убираем контур для стрелок горизонтального скроллбара */
+    background: none; /* Убираем фон для стрелок горизонтального скроллбара */
+}</string>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>447</width>
+        <height>644</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLineEdit" name="SearchlineEdit">
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    border: 2px solid #cccccc; /* Контур */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 5px; /* Отступы вокруг текста */
+    font-size: 14px; /* Размер шрифта */
+}
+
+QLineEdit:hover {
+    border: 2px solid #4CAF50; /* Изменяем контур при наведении */
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="SearchButton">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Задаем скругленные углы */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень снизу */
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Изменяем тень при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #39843a; /* Изменяем цвет при нажатии */
+}
+
+QPushButton:focus {
+    outline: none; /* Убираем фокусовку по умолчанию */
+}
+
+QPushButton {
+    border: 2px solid #336633; /* Добавляем контур */
+}</string>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

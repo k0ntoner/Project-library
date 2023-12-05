@@ -12,7 +12,7 @@
 #include "a_game_of_thrones.h"
 #include "galaxy.h"
 #include "margarita.h"
-#include "liked.h"
+#include "open.h"
 namespace Ui {
 class Liked;
 }
@@ -24,7 +24,7 @@ class Liked : public QDialog
 public:
     explicit Liked(QWidget *parent = nullptr);
     ~Liked();
-    void setLabelText(const QString &text, const QString &book_name,int size_bookname[],int size_bookimg[]);
+    int setLabelText(const QString &text, const QString &book_name,int size_bookname[],int size_bookimg[]);
 private slots:
     void onDeleteButtonClicked();
     void updateUI();
@@ -47,6 +47,7 @@ private:
     Margarita *margarita;
     Liked *liked;
     QVector<QLabel*> Names_of_books;
+    Open *open;
 };
 
 #endif // LIKED_H

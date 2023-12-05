@@ -27,12 +27,23 @@ void Log_in::on_pushButton_clicked()
         while (!in.atEnd()) {
             QString Email=in.readLine();
             QString Password=in.readLine();
+            QString Saves=in.readLine();
             Email.remove(0,2);
             Password.remove(0,2);
             if(ui->Email_lineEdit->text() == Email && ui->Password_lineEdit->text()==Password){
+                file.close();
                 qDebug() << "Вход выполнен успешно!";
                 autorizetion = true;
-                break;
+                QFile file_saves("C:/Users/Andrew/Documents/library/Accaunts_saves.txt");
+                if (file_saves.open(QIODevice::Append | QIODevice::Text)) {
+                    QTextStream out(&file_saves);
+                    out << "E:" << ui->Email_lineEdit->text() << '\n';
+                    out << "P:" << ui->Password_lineEdit->text() << '\n';
+                    out << Saves;
+                    qDebug() << Saves;
+                    file_saves.close();
+                    break;
+                }
             }
         }
         if(autorizetion == true){
@@ -44,6 +55,5 @@ void Log_in::on_pushButton_clicked()
             ui->Error->setText("Account doesnt found");
         }
     }
-
 }
 

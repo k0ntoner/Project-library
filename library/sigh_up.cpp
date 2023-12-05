@@ -8,7 +8,9 @@ Sigh_up::Sigh_up(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Sigh_up)
 {
+
     ui->setupUi(this);
+    setWindowTitle("Regestration Window");
 }
 
 Sigh_up::~Sigh_up()
@@ -30,6 +32,7 @@ void Sigh_up::on_Accept_Button_clicked()
             QTextStream out(&file);
             out << "E:" << ui->Email_Line->text() << '\n';
             out << "P:" << ui->Password_Line->text() << '\n';
+            out << "Saves:\n";
             file.close();
             hide();
         }
